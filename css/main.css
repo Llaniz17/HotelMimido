@@ -12,7 +12,10 @@ body {
 ul {
   list-style: none;
   display: flex;
-  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+input{
+  width: 100px;
 }
 
 .top__header {
@@ -219,4 +222,10 @@ ul {
   .wrapper .cards .card__details h3 {
     font-size: 18px;
   }
+}
+
+#room-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
 }
