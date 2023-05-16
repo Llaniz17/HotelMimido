@@ -96,21 +96,15 @@ input{
   color: #777777;
   font-size: 12px;
 }
-.cards .card__details .price {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
+
 .cards .card__details .price .price__l {
   width: 100%;
-  text-align: right;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
-.cards .card__details .price .price__l .price__label {
-  font-weight: 600;
-  text-align: right;
-}
-.cards .card__details .price .star img {
-  width: 14px;
-}
+
+
 .cards .card__details button {
   cursor: pointer;
   width: 100%;
@@ -223,9 +217,25 @@ input{
     font-size: 18px;
   }
 }
+.ver-detalle {
+  margin-top: 10px;
+}
 
-#room-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
+.tarjeta-detalle {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  z-index: 9999;
+  padding: 20px;
+}
+
+.cerrar-detalle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }

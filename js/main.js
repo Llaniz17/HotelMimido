@@ -55,15 +55,16 @@ const rooms = [
       roomType.classList.add("address");
       roomType.textContent = "Tipo: " + room.type;
   
-      const roomPrice = document.createElement("span");
+      const roomPrice = document.createElement("div");
       roomPrice.classList.add("price__label");
       roomPrice.textContent = "Precio: $" + room.price;
   
-      const roomCapacity =document.createElement("span");
+      const roomCapacity =document.createElement("div");
       roomCapacity.classList.add("measure__label");
       roomCapacity.textContent = "Capacidad: " + room.capacity + " persona(s)";
 
       const roomButton = document.createElement("button");
+      roomButton.classList.add("ver-detalle");
       roomButton.textContent = "Detalle";
 
       roomDivImg.appendChild(roomImg);
@@ -80,9 +81,24 @@ const rooms = [
       roomCard.appendChild(roomDivDetails);
 
       roomList.appendChild(roomCard);
+
+      const tarjetaDetalle = document.getElementById("tarjeta-detalle");
+      tarjetaDetalle.classList.add("tarjeta-detalle");
+      const cerrarDetalle = document.createElement("button");
+      cerrarDetalle.textContent = "Cerrar";
+      tarjetaDetalle.appendChild(cerrarDetalle);
+      function mostrarDetalle() {
+        tarjetaDetalle.style.display = 'block';
+      }
+      function cerrarDetalleFunc() {
+        tarjetaDetalle.style.display = 'none';
+      }
+      roomButton.addEventListener('click', mostrarDetalle);
+      cerrarDetalle.addEventListener('click',cerrarDetalleFunc);
     });
     
 
   }
 // Mostrar todas las habitaciones al cargar la página
 displayRooms(rooms);
+
