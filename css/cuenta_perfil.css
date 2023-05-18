@@ -112,12 +112,6 @@ body {
   animation-fill-mode: forwards;
 }
 
-
-.button-left {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
 .button-right {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -125,11 +119,7 @@ body {
 .button-left {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-}
-
-.button-right {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+ 
 }
 .button-edit {
   width: auto;
@@ -196,7 +186,7 @@ text-align: center;
 }
 
 .menu button {
-display: block;
+
 margin-bottom: 10px;
 width: 100%;
 background-color: #ff7600bd;
@@ -238,6 +228,7 @@ margin-right: 10px;
 width: 200px;
 height: auto;
 margin-bottom: 10px;
+border-radius: 10px;
 }
 
 .room-number {
