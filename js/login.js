@@ -38,7 +38,9 @@ regis.addEventListener('submit', function(event){
     telReg.value = '';
     conPasswordReg.value = '';
     
+    
     window.location.href = '/html/perfil.html';
+
 
 })
 
@@ -47,10 +49,10 @@ function guardarUsuario(usuario) {
     // Obtener los usuarios existentes del almacenamiento local (si hay alguno) o crear el Json
     let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
 
-    // Agregar el nuevo usuario a la lista
+    // Agrega el nuevo usuario a la lista
     usuarios.push(usuario);
 
-    // Guardar la lista actualizada en el almacenamiento local
+    // Guarda la lista actualizada en el almacenamiento local
     localStorage.setItem('usuarios', JSON.stringify(usuarios));
     //mensaje de confirmación
     alert(`El usuario ${nombreReg.value} ha sido registrado`)
