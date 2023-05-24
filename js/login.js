@@ -16,7 +16,7 @@ regis.addEventListener('submit', function(event){
     const email = emailReg.value;
     const contraseña = passwordReg.value;
     const telefono = telReg.value;
-    const conPasswordReg = conPasswordReg.value;
+    const confirmarPasswordReg = conPasswordReg.value;
 
     // Crear un objeto de usuario
     const usuario = {
@@ -37,6 +37,8 @@ regis.addEventListener('submit', function(event){
     passwordReg.value = '';
     telReg.value = '';
     conPasswordReg.value = '';
+    
+    window.location.href = '/html/perfil.html';
 
 })
 
@@ -58,23 +60,23 @@ function guardarUsuario(usuario) {
 
 // Función para mostrar los usuarios registrados NOTA:debe descomentar la lista en el html(Línea 62)
 
-//function mostrarUsuariosRegistrados() {
-  //  // Obtener los usuarios del almacenamiento local
-    //const usuarios = JSON.parse(localStorage.getItem('usuarios'));
+function mostrarUsuariosRegistrados() {
+    // Obtener los usuarios del almacenamiento local
+    const usuarios = JSON.parse(localStorage.getItem('usuarios'));
 
     //// Limpiar la lista de usuarios
-    //usuariosRegistrados.innerHTML = '';
+    usuariosRegistrados.innerHTML = '';
 
     //// Recorrer la lista de usuarios y agregar cada uno a la lista
-    //if (usuarios) {
-      //  usuarios.forEach(function (usuario) {
-        //    const li = document.createElement('li');
-          //  li.textContent = usuario.email + ' - ' + usuario.contraseña;
-            //usuariosRegistrados.appendChild(li);
-        //});
-    //}
-//}
-//mostrarUsuariosRegistrados();
+    if (usuarios) {
+        usuarios.forEach(function (usuario) {
+            const li = document.createElement('li');
+            li.textContent = usuario.email + ' - ' + usuario.contraseña;
+            usuariosRegistrados.appendChild(li);
+        });
+    }
+}
+mostrarUsuariosRegistrados();
 
 
 //      :::::Funcionalidad del login:::::
