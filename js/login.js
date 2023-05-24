@@ -1,8 +1,10 @@
+//Funcionalidad del registro (Guarda todos los datos)
 const nombreReg = document.getElementById('nombreReg')
 const apellidoReg = document.getElementById('apellidoReg')
 const emailReg = document.getElementById('emailReg')
 const passwordReg = document.getElementById('passwordReg')
 const telReg = document.getElementById('telReg')
+const conPasswordReg = document.getElementById('conPasswordReg')
 const regis = document.getElementById('regis')
 
 regis.addEventListener('submit', function(event){
@@ -14,6 +16,7 @@ regis.addEventListener('submit', function(event){
     const email = emailReg.value;
     const contraseña = passwordReg.value;
     const telefono = telReg.value;
+    const conPasswordReg = conPasswordReg.value;
 
     // Crear un objeto de usuario
     const usuario = {
@@ -23,18 +26,23 @@ regis.addEventListener('submit', function(event){
         contraseña: contraseña,
         telefono: telefono
     };
+
     // Guardar el usuario en el almacenamiento local
     guardarUsuario(usuario);
 
     // Limpiar los campos de entrada
-    username.value = '';
-    pass.value = '';
+    nombreReg.value = '';
+    apellidoReg.value = '';
+    emailReg.value = '';
+    passwordReg.value = '';
+    telReg.value = '';
+    conPasswordReg.value = '';
 
 })
 
 // Función para guardar un usuario en el almacenamiento local
 function guardarUsuario(usuario) {
-    // Obtener los usuarios existentes del almacenamiento local (si hay alguno)
+    // Obtener los usuarios existentes del almacenamiento local (si hay alguno) o crear el Json
     let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
 
     // Agregar el nuevo usuario a la lista
@@ -42,4 +50,62 @@ function guardarUsuario(usuario) {
 
     // Guardar la lista actualizada en el almacenamiento local
     localStorage.setItem('usuarios', JSON.stringify(usuarios));
+    //mensaje de confirmación
+    alert(`El usuario ${nombreReg.value} ha sido registrado`)
 }
+
+//     ::::Si quiere ver cuales usuarios están registrados::::
+
+// Función para mostrar los usuarios registrados NOTA:debe descomentar la lista en el html(Línea 62)
+
+//function mostrarUsuariosRegistrados() {
+  //  // Obtener los usuarios del almacenamiento local
+    //const usuarios = JSON.parse(localStorage.getItem('usuarios'));
+
+    //// Limpiar la lista de usuarios
+    //usuariosRegistrados.innerHTML = '';
+
+    //// Recorrer la lista de usuarios y agregar cada uno a la lista
+    //if (usuarios) {
+      //  usuarios.forEach(function (usuario) {
+        //    const li = document.createElement('li');
+          //  li.textContent = usuario.email + ' - ' + usuario.contraseña;
+            //usuariosRegistrados.appendChild(li);
+        //});
+    //}
+//}
+//mostrarUsuariosRegistrados();
+
+
+//      :::::Funcionalidad del login:::::
+
+const usernameLogin = document.getElementById('usernameLogin')
+const passwordLogin = document.getElementById('passwordLogin')
+const login = document.getElementById('login')
+
+login.addEventListener('submit', function(event){
+
+    event.preventDefault(); //Evitar envío del formulario
+
+    //Obtener datos de los inputs
+    const usuarioLogin = usernameLogin.value;
+    const contraseñaLogin = passwordLogin.value;
+
+    //Verificar que el usuario esté registrado
+    const usuariosLogin = JSON.parse(localStorage.getItem('usuarios'));
+    const usuarioEncontrado = usuariosLogin.find(function (usuario) {
+        return usuario.email === usuarioLogin && usuario.contraseña === contraseñaLogin;
+    });
+
+    //Mensaje de verificación
+    if(usuarioEncontrado){
+        alert("Has ingresado exitosamente");
+        // Aquí puede redirigir al usuario a otra página o realizar acciones adicionales
+    } else{
+        alert("Datos no válidos para el ingreso");
+    }
+
+    // se limpian los campos
+    usuarioLogin.value = '';
+    passwordLogin.value = '';
+})
