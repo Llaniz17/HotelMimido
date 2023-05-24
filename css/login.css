@@ -69,7 +69,7 @@ input{
     width: 97%;
 }
 
-#btnr{
+#btnReg{
     width: 100%;
     height: 54px;
     border: 0;
@@ -92,7 +92,7 @@ input{
     margin-left: 15px;
 }
 
-#btnl{
+#btnLogin{
     margin-top: 50px;
     width: 332px;
     height: 133px;

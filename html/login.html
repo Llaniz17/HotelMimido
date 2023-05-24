@@ -14,50 +14,53 @@
     <h1>Cuentas</h1>
 
     <section class="forms">
+        <!--Formulario de login-->
         <div class="formu1">
-            <form action="/login" method="POST">
+            <form id="login">
                 <h2>Ingresa a tu perfil</h2>
                 <br>
-                <label for="username">Usuario:</label><br>
-                <input type="text" id="username" name="username" required><br><br>
+                <label for="usernameLogin">Usuario:</label><br>
+                <input type="text" id="usernameLogin" name="usernameLogin" required><br><br>
 
                 <br>
-                <label for="password">Contraseña:</label><br>
-                <input type="password" id="password" name="password" required><br><br>
+                <label for="passwordLogin">Contraseña:</label><br>
+                <input type="password" id="passwordLogin" name="passwordLogin" required><br><br>
 
-                <input  id="btnl" type="submit" value="Ingresar">
+                <input  id="btnLogin" type="submit" value="Ingresar">
             </form>
         </div>
         
+        <!--Formulario de registro *No tocar las clases*-->
         <div class="formu">
-            <form action="/register" method="POST">
+            <form id="regis">
                 <h2>¿No tienes cuenta? Creala</h2>
                 <div class="nomyape">
                     <div class="prueba">
-                        <label for="nombre">Nombre</label><br>
-                        <input type="text" id="nombre" name="nombre" required><br>
+                        <label for="nombreReg">Nombre</label><br>
+                        <input type="text" id="nombreReg" name="nombreReg" required><br>
                     </div>
                     <div class="prueba">
-                        <label for="apellido">Apellido</label><br>
-                        <input type="text" id="apellido" name="apellido" required><br>
+                        <label for="apellidoReg">Apellido</label><br>
+                        <input type="text" id="apellidoReg" name="apellidoReg" required><br>
                     </div>
                 </div>
                 <br>
-                <label for="email">Email</label><br>
-                <input class="seg" type="email" id="email" name="email" required><br>
+                <label for="emailReg">Email</label><br>
+                <input class="seg" type="email" id="emailReg" name="emailReg" required><br>
                 <br>
-                <label for="password">Contraseña</label><br>
-                <input class="seg" type="password" id="password" name="password" required><br>
+                <label for="passwordReg">Contraseña</label><br>
+                <input class="seg" type="password" id="passwordReg" name="passwordReg" required><br>
                 <br>
-                <label for="password">Confirmar contraseña</label><br>
-                <input class="seg" type="password" id="conpassword" name="conpassword" required><br>
+                <label for="conPasswordReg">Confirmar contraseña</label><br>
+                <input class="seg" type="password" id="conPasswordReg" name="conPasswordReg" required><br>
                 <br>
-                <label for="tel">Teléfono</label><br>
-                <input class="seg" type="number" id="tel" name="tel" required><br>
+                <label for="telReg">Teléfono</label><br>
+                <input class="seg" type="number" id="telReg" name="telReg" required><br>
                 <br>
-                <input id="btnr" type="submit" value="Crear cuenta">
+                <input id="btnReg" type="submit" value="Crear cuenta">
             </form>
         </div>
     </section>
+    <script src="/js/login.js"></script>
 </body>
 </html>
