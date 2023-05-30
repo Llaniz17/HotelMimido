@@ -1,0 +1,86 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    display: block;
+    background-color: #E4DDD8;
+}
+
+h1{
+    border-bottom: 1px;
+    border-bottom: 2px solid #ADA7A4;
+}
+.contpri{
+    display: block;
+    
+}
+
+.contpri .contdatos{
+    display: inline-flex;
+    width: 520px;
+}
+
+.contpri .contdatos .data{
+    width: 250px;
+    height: 200px;
+}
+.contpri .contdatos .data dt{
+    display: inline-block;
+}
+.contpri .contdatos .data dd{
+    display: inline-block;
+    text-align: right;
+    justify-content: right;
+    margin-left: 10px;
+}
+
+
+.contpri .contdatos .valores{
+    width: 250px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    border: 1px solid;
+    border-radius: 20px;
+}
+.contpri .contdatos .valores dt{
+    display: inline;
+}
+.contpri .contdatos .valores dd{
+    display: inline;
+
+}
+.contpri .contdatos .valores div{
+    margin-top: 40px;
+}
+
+.contpri .form{
+    display: block;
+}
+
+.contpri .form .btn{
+    display: inline-block;
+    width: 250px;
+}
+.contpri .form .btn input{
+    display: flex;
+    width:  60%;
+    margin: auto;
+    margin-top: 0px;
+    justify-content: center;
+    height: 40px;
+    margin-bottom: 20px;
+    border: 0px;
+    border-radius: 15px;
+    background-color: #1AA359;
+    color: aliceblue;
+    font-size: 20px;
+}
+
+.contpri .form .radios{
+    display: inline-block;
+    margin-top: 10px;
+}
+.contpri .form .radios label{
+    display: block;
+}

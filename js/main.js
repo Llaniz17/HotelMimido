@@ -62,7 +62,7 @@ function displayRooms(filteredRooms) {
     roomImg.src = "https://images.unsplash.com/photo-1530629013299-6cb10d168419?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&h=200&q=1500";
 
     const roomId = document.createElement("h3");
-    roomId.textContent = "ID: " + room.id;
+    roomId.textContent = "" + room.id;
 
     const roomType = document.createElement("div");
     roomType.classList.add("address");
@@ -77,9 +77,9 @@ function displayRooms(filteredRooms) {
     roomCapacity.textContent = "Capacidad: " + room.capacity + " persona(s)";
 
     const roomButton = document.createElement("button");
-    roomButton.classList.add("ver-detalle");
+    roomButton.classList.add("reservar");
     roomButton.textContent = "Detalle";
-    roomButton.addEventListener('click', mostrarDetalle);
+    roomButton.addEventListener('click', addLocalStorage);
 
     roomDivImg.appendChild(roomImg);
 
@@ -104,4 +104,21 @@ function displayRooms(filteredRooms) {
 
 // Mostrar todas las habitaciones al cargar la página
 displayRooms(rooms);
+let reserva = []
+function addLocalStorage(e){
+  const button = e.target
+  const item = button.closest('.card')
+  const itemId = item.querySelector('h3').textContent;
+  const itemPrice = item.querySelector('.price__label').textContent;
+  const itemImg = item.querySelector('img').src;
+  
+  const newItem = {
+    id: itemId,
+    precio: itemPrice,
+    img: itemImg,
+    cantidad: 1
+  }
+  reserva.push(newItem)
+  localStorage.setItem('reserva', JSON.stringify(reserva))
+}
 
