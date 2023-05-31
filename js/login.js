@@ -39,7 +39,7 @@ regis.addEventListener('submit', function(event){
     conPasswordReg.value = '';
     
     
-    window.location.href = '/html/perfil.html';
+    window.location.href = '../index.html';
 
 
 })
@@ -112,4 +112,11 @@ login.addEventListener('submit', function(event){
     // se limpian los campos
     usuarioLogin.value = '';
     passwordLogin.value = '';
+
+
+    //Loguear al usuario encontrado
+    const usuarioLog = JSON.stringify(usuarioEncontrado); // crea un objeto con el usuario logueado
+    localStorage.setItem("usuarioLog", usuarioLog); //guarda el objeto en localstorage
+
+    window.location.href = '../index.html'; //envía a página principal
 })
