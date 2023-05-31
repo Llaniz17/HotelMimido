@@ -13,18 +13,34 @@
         Habitacion removida!
     </div>
     <table>
-        <thead>
+        <thead class="thead">
             <tr>
-                <th>A</th>
-                <th>B</th>
-                <th>C</th>
+                <th>ID</th>
+                <th>Habitacion</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody class="tbody">
         </tbody>
     </table>
     <h3 class="itemCartTotal"></h3>
-    <a href="../index.html">reserva</a>
+    <footer>
+        <a href="../index.html" class="back">Volver al Inicio</a>
+        <a href="../index.html" class="reservar">Reservar</a>
+        <label class="banco">
+
+            <input type="radio" name="opcion" value="Bancolombia">
+            Bancolombia 888-8888-8888
+        </label>
+        <label class="nequi">
+            <input type="radio" name="opcion" value="Nequi">
+            Nequi +57 5555555555
+        </label>
+
+    </footer>
+
     
     <script src="../js/reserva.js"></script>
 </body>

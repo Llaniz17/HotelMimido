@@ -13,16 +13,18 @@ function renderCarrito(){
     
     const Content = `
     
-    <th scope="row">1</th>
+    <th scope="row"><h6 class="title">${id}</h6></th>
             <td class="table__productos">
               <img src=${item.img}  alt="">
-              <h6 class="title">${id}</h6>
             </td>
             <td class="table__price"><p>${precio}</p></td>
             <td class="table__cantidad">
               <h6 class="input__elemento">${item.cantidad}</h6>
-              <button class="delete btn btn-danger">x</button>
             </td>
+            <td class="table__eliminar">
+              <button class="delete btn btn-danger">Eliminar</button>
+            </td>
+            
     
     `
     tr.innerHTML = Content;

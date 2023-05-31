@@ -1,10 +1,11 @@
 // Datos de ejemplo: habitaciones disponibles
 const rooms = [
-  { id: 1, type: "individual", price: 50, capacity: 1, reserved: false },
-  { id: 2, type: "doble", price: 80, capacity: 2, reserved: true },
-  { id: 3, type: "suite", price: 150, capacity: 2, reserved: false },
-  { id: 4, type: "individual", price: 60, capacity: 1, reserved: false },
-  { id: 5, type: "doble", price: 100, capacity: 2, reserved: false },
+  { id: 1, type: "individual", price: 50, capacity: 1, reserved: false, img:"../media/individual.png" },
+  { id: 2, type: "doble", price: 80, capacity: 2, reserved: false, img:"../media/matrimonial_1.png" },
+  { id: 3, type: "lujo", price: 150, capacity: 1, reserved: false, img:"../media/lujo_1.png" },
+  { id: 4, type: "individual", price: 60, capacity: 1, reserved: false, img:"../media/individual_2.png" },
+  { id: 5, type: "doble", price: 100, capacity: 2, reserved: false,img:"../media/Matrimonial_2.png" },
+  { id: 6, type: "lujo", price: 180, capacity: 2, reserved: false, img:"../media/lujo_2.png" },
 ];
 
 const tarjetaDetalle = document.getElementById("tarjeta-detalle");
@@ -59,7 +60,7 @@ function displayRooms(filteredRooms) {
     roomDivImg.classList.add("card__img");
 
     const roomImg = document.createElement("img");
-    roomImg.src = "https://images.unsplash.com/photo-1530629013299-6cb10d168419?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&h=200&q=1500";
+    roomImg.src = room.img;
 
     const roomId = document.createElement("h3");
     roomId.textContent = "" + room.id;
@@ -78,7 +79,7 @@ function displayRooms(filteredRooms) {
 
     const roomButton = document.createElement("button");
     roomButton.classList.add("reservar");
-    roomButton.textContent = "Detalle";
+    roomButton.textContent = "Reservar";
     roomButton.addEventListener('click', addLocalStorage);
 
     roomDivImg.appendChild(roomImg);
@@ -106,6 +107,12 @@ function displayRooms(filteredRooms) {
 displayRooms(rooms);
 let reserva = []
 function addLocalStorage(e){
+  const alert = document.querySelector('.alert')
+
+  setTimeout( function(){
+    alert.classList.add('hide')
+  }, 2000)
+    alert.classList.remove('hide')
   const button = e.target
   const item = button.closest('.card')
   const itemId = item.querySelector('h3').textContent;
