@@ -40,7 +40,26 @@ function mostrarUsuarioLogueado() {
     email.setAttribute("value", lUsuario.email);
     contraseña.setAttribute("value", lUsuario.contraseña);
     telefono.setAttribute("value", lUsuario.telefono);
+
+   
 }
 mostrarUsuarioLogueado()
+
+function updateLocalStorage(){
+    const lUsuario = JSON.parse(localStorage.getItem('usuarioLog'));
+    const usuario = document.getElementById('nombre').value;
+    const apellido =document.getElementById('apellido').value;
+    const email =document.getElementById('email').value;
+    const contraseña =document.getElementById('contraseña').value;
+    const telefono =document.getElementById('telefono').value;
+    lUsuario.usuario = usuario
+    lUsuario.apellido = apellido
+    lUsuario.email = email
+    lUsuario.contraseña = contraseña
+    lUsuario.telefono = telefono
+    const nuevoUsuario = JSON.stringify(lUsuario)
+    localStorage.setItem('usuarioLog', nuevoUsuario)
+    mostrarUsuarioLogueado()
+}
 
 //
