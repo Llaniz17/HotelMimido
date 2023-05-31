@@ -35,3 +35,33 @@ function actualizar(datos) {
   alert("Datos Actualizados");
   window.location.href = "cuenta_perfil.html";
 }
+
+//traer usuario logueado
+
+function mostrarUsuarioLogueado() {
+  // Obtener los usuarios del almacenamiento local
+  const lUsuario = JSON.parse(localStorage.getItem('usuarioLog'));
+  console.log(lUsuario);
+
+  //mostrar nombre de usuario en el h1
+  const nombre = document.getElementById('usuarioLogueado');
+  nombre.textContent = lUsuario.usuario;
+
+  //mostrar datos de usuario
+  const usuario =document.getElementById('nombre')
+  const apellido =document.getElementById('apellido')
+  const email =document.getElementById('email')
+  const contraseña =document.getElementById('contraseña')
+  const telefono =document.getElementById('telefono')
+
+  usuario.textContent = lUsuario.usuario;
+  apellido.textContent = lUsuario.apellido;
+  email.textContent = lUsuario.email;
+  contraseña.textContent = lUsuario.contraseña;
+  telefono.textContent = lUsuario.telefono;
+
+}
+mostrarUsuarioLogueado()
+
+
+

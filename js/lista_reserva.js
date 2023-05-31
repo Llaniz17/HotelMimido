@@ -31,3 +31,15 @@ window.onload = function(){
         renderReservas()
     }
 }
+
+function mostrarUsuarioLogueado() {
+  // Obtener los usuarios del almacenamiento local
+  const lUsuario = JSON.parse(localStorage.getItem('usuarioLog'));
+  console.log(lUsuario);
+
+  //mostrar nombre de usuario en el h1
+  const nombre = document.getElementById('usuarioLogueado');
+  nombre.textContent = lUsuario.usuario;
+
+}
+mostrarUsuarioLogueado()
