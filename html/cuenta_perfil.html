@@ -3,7 +3,7 @@
 <head>
   <title>Perfil y Reserva</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link rel="stylesheet" href="C:\Users\Robinson\HotelMimido\css\cuenta_perfil.css">
+  <link rel="stylesheet" href="../css/cuenta_perfil.css">
 </head>
 <body>
   <div class="profile-container">
@@ -31,54 +31,31 @@
       <table>
         <tr>
           <td>Nombre:</td>
-          <td><input type="text" id="nombre"></td>
+          <td id="nombre"></td>
           
         </tr>
         <tr>
           <td>Apellido:</td>
-          <td><input type="text" id="apellido" ></td>
+          <td id="apellido"></td>
         </tr>
         <tr>
           <td>Email:</td>
-          <td><input type="email" id="email"></td>
+          <td id="email"></td>
         </tr>
         <tr>
           <td>Contraseña:</td>
-          <td><input type="password" id="contraseña" ></td>
+          <td id="password"></td>
         </tr>
         <tr>
           <td>Teléfono:</td>
-          <td><input type="tel" id="telefono"></td>
+          <td id="telefono"></td>
         </tr>
       </table>
       <a href="editar_perfil.html"><button class="button-edit">Editar <i class="fas fa-pencil-alt"></i></button></a>
     </div>
   </div>
-  <script>
-    // Función para obtener los datos del perfil del almacenamiento local
-    function obtenerDatosPerfil() {
-      var datos = localStorage.getItem("datosPerfil");
-      if (datos) {
-        return JSON.parse(datos);
-      }
-      return null;
-    }
-
-    // Función para mostrar los datos del perfil en la página
-    function mostrarDatosPerfil() {
-      var datos = obtenerDatosPerfil();
-      if (datos) {
-        document.getElementById("nombre").textContent = datos.nombre;
-        document.getElementById("apellido").textContent = datos.apellido;
-        document.getElementById("email").textContent = datos.email;
-        document.getElementById("contraseña").textContent = datos.contraseña;
-        document.getElementById("telefono").textContent = datos.telefono;
-      }
-    }
-
-    // Cargar los datos del perfil al cargar la página
-    mostrarDatosPerfil();
-  </script>
+  <script src="../js/editar_perfil.js"></script>
+  
 </body>
 </html>
 

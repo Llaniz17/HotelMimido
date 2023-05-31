@@ -39,7 +39,7 @@ regis.addEventListener('submit', function(event){
     conPasswordReg.value = '';
     
     
-    window.location.href = '/html/perfil.html';
+    //window.location.href = '/html/editar_perfil.html';
 
 
 })
@@ -62,23 +62,7 @@ function guardarUsuario(usuario) {
 
 // Función para mostrar los usuarios registrados NOTA:debe descomentar la lista en el html(Línea 62)
 
-function mostrarUsuariosRegistrados() {
-    // Obtener los usuarios del almacenamiento local
-    const usuarios = JSON.parse(localStorage.getItem('usuarios'));
 
-    //// Limpiar la lista de usuarios
-    usuariosRegistrados.innerHTML = '';
-
-    //// Recorrer la lista de usuarios y agregar cada uno a la lista
-    if (usuarios) {
-        usuarios.forEach(function (usuario) {
-            const li = document.createElement('li');
-            li.textContent = usuario.email + ' - ' + usuario.contraseña;
-            usuariosRegistrados.appendChild(li);
-        });
-    }
-}
-mostrarUsuariosRegistrados();
 
 
 //      :::::Funcionalidad del login:::::
