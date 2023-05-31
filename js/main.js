@@ -129,3 +129,16 @@ function addLocalStorage(e){
   localStorage.setItem('reserva', JSON.stringify(reserva))
 }
 
+//Mostrar el nombre de usuario en la sección nav
+
+function mostrarUsuarioLogueado() {
+  // Obtener los usuarios del almacenamiento local
+  const lUsuario = JSON.parse(localStorage.getItem('usuarioLog'));
+  console.log(lUsuario);
+
+  const acceder = document.getElementById('usuarioLogueado');
+  acceder.textContent = lUsuario.usuario;
+
+
+}
+mostrarUsuarioLogueado()

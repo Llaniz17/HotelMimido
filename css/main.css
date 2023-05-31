@@ -260,7 +260,7 @@ footer a{
   font-size: 2rem;
 }
 
-li a{
+li a, #usuarioLogueado{
   color: #ffffff;
   text-decoration: none;
   font-size: 1.3rem;
